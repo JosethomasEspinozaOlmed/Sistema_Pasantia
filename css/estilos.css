@@ -82,7 +82,7 @@ h1, h2, h3 {
   margin-bottom: 1rem;
 }
 
-/* PIE DE PÁGINA */
+/*pie de pagina */
 footer {
   text-align: center;
   background-color: #004d40;
@@ -91,7 +91,7 @@ footer {
   font-size: 0.9rem;
 }
 
-/* FORMULARIO */
+/*formulario*/
 form input,
 form textarea {
   width: 100%;
@@ -117,7 +117,7 @@ form button:hover {
   background-color: #004d40;
 }
 
-/* CARRUSEL */
+/*carrusel*/
 .carousel-container {
   max-width: 1200px;
   margin: 2rem auto;
