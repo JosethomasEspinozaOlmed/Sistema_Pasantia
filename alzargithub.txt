@@ -1,0 +1,3 @@
+primero hacer git add .
+segundo git commit -m "comentario"
+ultimo mandar git push
