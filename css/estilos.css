@@ -55,7 +55,7 @@ nav a::after {
   height: 2px;
   left: 0;
   bottom: -5px;
-  background-color: #ffffff;
+  background-color: #ffffffc9;
   transition: width 0.3s;
 }
 
@@ -68,18 +68,27 @@ section {
   padding: 3rem 2rem;
   max-width: 1000px;
   margin: auto;
-  background-color: #ffffff;
+  background-color: lab(100% 0.01 -0.01);
   box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
   margin-bottom: 3rem;
-  border-radius: 12px;
+  border-radius: 50px;
   line-height: 1.7;
   color: #2c3e50;
 }
 
-h1, h2, h3 {
+h1, h2, h3  {
   color: #00695c;
   text-align: center;
   margin-bottom: 1rem;
+  border: 5px solid #00695c;
+  padding: 0.5rem;
+  border-radius: 8px;
+}
+h4 {
+  color: #004d40;
+  text-align: center;
+  margin-bottom: 1rem;
+  font-weight: 600;
 }
 
 /*pie de pagina */
