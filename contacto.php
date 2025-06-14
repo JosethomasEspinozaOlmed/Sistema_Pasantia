@@ -7,13 +7,19 @@
   <link rel="stylesheet" href="css/estilos.css">
 </head>
 <body>
+
 <nav>
-  <ul>
-    <li><a href="index.html">Inicio</a></li>
-    <li><a href="historia.html">Historia</a></li>
-    <li><a href="servicios.html">Servicios</a></li>
-    <li><a href="contacto.php">Contacto</a></li>
-  </ul>
+  <div class="nav-container">
+    <a href="index.html">
+      <img src="img/logo_sin_fondo.png" alt="Logo Cooperativa" class="logo">
+    </a>
+    <ul>
+      <li><a href="index.html">Inicio</a></li>
+      <li><a href="historia.html">Historia</a></li>
+      <li><a href="servicios.html">Servicios</a></li>
+      <li><a href="contacto.php">Contacto</a></li>
+    </ul>
+  </div>
 </nav>
 <section>
   <h1>Contacto</h1>
