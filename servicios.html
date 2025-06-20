@@ -1,275 +1,321 @@
 <!DOCTYPE html>
 <html lang="es">
 <head>
-  <meta charset="UTF-8">
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
   <title>Servicios - Cooperativa Pirapó</title>
-  <link rel="stylesheet" href="css/estilos.css">
-  <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" rel="stylesheet">
+  <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" rel="stylesheet" />
+  <link href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.11.3/font/bootstrap-icons.css" rel="stylesheet" />
+  <link href="https://cdn.jsdelivr.net/npm/aos@2.3.4/dist/aos.css" rel="stylesheet" />
+  <style>
+    /* Base and body */
+    body {
+      margin: 0;
+      font-family: 'Poppins', sans-serif;
+      background: linear-gradient(to bottom, #f0f4f8, #65cbd9);
+      color: #334;
+      scroll-behavior: smooth;
+      -webkit-font-smoothing: antialiased;
+      -moz-osx-font-smoothing: grayscale;
+    }
+
+    nav {
+      background: linear-gradient(90deg, #004d40, #00796b);
+      box-shadow: 0 4px 12px rgba(0,0,0,0.2);
+      padding: 1rem;
+      position: sticky;
+      top: 0;
+      z-index: 1100;
+      transition: background-color 0.3s ease;
+    }
+
+    .nav-container {
+      max-width: 1200px;
+      margin: auto;
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      flex-wrap: wrap;
+    }
+
+    .logo {
+      height: 60px;
+    }
+
+    nav ul {
+      list-style: none;
+      display: flex;
+      gap: 2rem;
+      padding: 0;
+      margin: 0;
+    }
+
+    nav a {
+      color: #fff;
+      font-weight: 600;
+      text-decoration: none;
+      font-size: 1rem;
+      padding: 8px 14px;
+      border-radius: 8px;
+      transition: background 0.3s ease, transform 0.3s ease;
+      white-space: nowrap;
+    }
+
+    nav a:hover, nav a.active {
+      background-color: rgba(255, 255, 255, 0.25);
+      transform: scale(1.05);
+      text-decoration: none;
+    }
+
+    /* Header Section */
+    header.page-header {
+      padding: 4rem 2rem 2rem;
+      text-align: center;
+      max-width: 900px;
+      margin: 0 auto 3rem;
+    }
+
+    header.page-header h1 {
+      font-size: 2.8rem;
+      color: #00796b;
+      font-weight: 700;
+      letter-spacing: 0.05em;
+      text-shadow: 0 2px 6px rgba(0,121,107,0.3);
+    }
+
+    header.page-header p {
+      font-size: 1.2rem;
+      color: #074d40;
+      margin-top: 1rem;
+      line-height: 1.5;
+      font-weight: 400;
+    }
+
+    /* Cards grid container */
+    .cards-container {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(320px, 1fr));
+      gap: 2rem;
+      max-width: 1200px;
+      margin: 0 auto 4rem;
+      padding: 0 1rem;
+    }
+
+    /* Card styling */
+    .service-card {
+      background: #fff;
+      border-radius: 20px;
+      box-shadow: 0 8px 20px rgba(0,121,107,0.15), inset 0 0 10px rgba(0,121,107,0.05);
+      transition: transform 0.3s ease, box-shadow 0.3s ease;
+      display: flex;
+      flex-direction: column;
+      overflow: hidden;
+      cursor: default;
+    }
+
+    .service-card:hover {
+      transform: translateY(-10px);
+      box-shadow: 0 20px 40px rgba(0,121,107,0.3), inset 0 0 15px rgba(0,121,107,0.10);
+    }
+
+    .service-card img {
+      width: 100%;
+      object-fit: cover;
+      height: 200px;
+      border-top-left-radius: 20px;
+      border-top-right-radius: 20px;
+      user-select: none;
+      pointer-events: none;
+    }
+
+    .service-content {
+      padding: 1.8rem 1.6rem 2rem 1.6rem;
+      flex-grow: 1;
+      display: flex;
+      flex-direction: column;
+    }
+
+    .service-content h3 {
+      color: #00796b;
+      margin-bottom: 0.6rem;
+      font-weight: 700;
+      font-size: 1.4rem;
+      display: flex;
+      align-items: center;
+      gap: 0.5rem;
+    }
+
+    .service-content h3 i {
+      font-size: 1.5rem;
+      color: #004d40;
+      text-shadow: 0 0 5px rgba(0, 121, 107, 0.6);
+    }
+
+    .service-content p {
+      flex-grow: 1;
+      font-size: 1rem;
+      line-height: 1.5;
+      color: #3a3a3a;
+      margin-bottom: 1rem;
+      user-select: text;
+    }
+
+    /* Buttons and lists inside cards */
+    .service-content ul {
+      list-style: disc inside;
+      padding-left: 0;
+      margin: 0 0 0 1rem;
+      color: #00695c;
+      font-weight: 500;
+    }
+
+    /* Footer */
+    footer {
+      background-color: #2b6777;
+      color: #fff;
+      text-align: center;
+      padding: 30px 15px;
+    }
+
+    /* Responsive tweaks */
+    @media (max-width: 600px) {
+      header.page-header h1 {
+        font-size: 2rem;
+      }
+      .service-card img {
+        height: 180px;
+      }
+    }
+  </style>
 </head>
 <body>
 
 <nav>
   <div class="nav-container">
-    <a href="index.html">
-      <img src="img/logo_sin_fondo.png" alt="Logo Cooperativa" class="logo">
-    </a>
+    <a href="index.html"><img src="img/logo_sin_fondo.png" alt="Logo Cooperativa" class="logo" /></a>
     <ul>
       <li><a href="index.html">Inicio</a></li>
       <li><a href="historia.html">Historia</a></li>
-      <li><a href="servicios.html">Servicios</a></li>
+      <li><a href="servicios.html" class="active" aria-current="page">Servicios</a></li>
       <li><a href="contacto.php">Contacto</a></li>
     </ul>
   </div>
 </nav>
 
-<section>
-  <h1>Servicios</h1>
-  <p>La Cooperativa Pirapó ofrece los siguientes servicios para sus socios y la comunidad:</p>
-</section>
+<header class="page-header" data-aos="fade-down" data-aos-duration="900">
+  <h1>Servicios Profesionales</h1>
+  <p>Comprometidos con la excelencia, ofrecemos una amplia gama de servicios para nuestros socios y comunidad, con innovación y calidad.</p>
+</header>
 
-<section>
-  <h2>Oficina Central</h2>
-  <img src="img/oficina_central.jpg" alt="Oficina Central" class="img-fluid mb-3 rounded shadow">
-  <p>
-    Dentro de la Oficina Central se encuentran los departamentos de Gerencia, Secretaría, Contabilidad, Tesorería, Comercial, Informática y Recursos Humanos.<br><br>
-    Los socios acceden a servicios de:
-    <ul>
-      <li>Cuenta Corrientes y Caja de Ahorros</li>
-      <li>Créditos para producción, inversiones como adquisiciones de Maquinarias Agrícolas y de Terrenos, mejoramiento de suelos (Cal Agrícola) y Créditos Especiales.</li>
-    </ul>
-    Todo esto acorde a las Normativas del INCOOP y la SEPRELAD.
-  </p>
-</section>
+<main class="cards-container">
 
-<section>
-  <h2>Silos</h2>
-  <p class="mb-4">
-    Cuenta con dos silos que realizan el acopio de toda la producción de sus cooperadores.
-  </p>
-
-  <div class="row mb-4 align-items-center">
-    <div class="col-md-4">
-      <img src="img/silo_centro.JPG" alt="Silo Centro" class="img-fluid rounded shadow">
+  <article class="service-card" data-aos="fade-up" data-aos-delay="100">
+    <img src="img/oficina_central.jpg" alt="Oficina Central de la Cooperativa" />
+    <div class="service-content">
+      <h3><i class="bi bi-building"></i>Oficina Central</h3>
+      <p>Departamentos expertos en Gerencia, Contabilidad, Comercial y más, brindando servicios financieros y administrativos acorde a normativas vigentes.</p>
+      <ul>
+        <li>Cuenta Corrientes y Caja de Ahorros</li>
+        <li>Créditos para producción e inversiones agrícolas</li>
+        <li>Asistencia conforme a INCOOP y SEPRELAD</li>
+      </ul>
     </div>
-    <div class="col-md-8">
-      <h4>Silo Centro</h4>
-      <p>
-        Ubicado en Pirapó Centro, cuenta con 7 pre-limpieza y 3 secaderos con capacidad estática total de 39.000 tn.
-        En él se recepcionan: Soja, Trigo, Maíz, Sorgo, Canola y Girasol.
-      </p>
+  </article>
+
+  <article class="service-card" data-aos="fade-up" data-aos-delay="200">
+    <img src="img/silo_centro.JPG" alt="Silo Centro" />
+    <div class="service-content">
+      <h3><i class="bi bi-box-seam"></i>Silos: Silo Centro</h3>
+      <p>Acopio de granos con capacidad para 39.000 tn, recepcionando soja, trigo, maíz y otros.</p>
     </div>
-  </div>
+  </article>
 
-  <div class="row mb-4 align-items-center">
-    <div class="col-md-4">
-      <img src="img/silo_13.JPG" alt="Silo Km 13" class="img-fluid rounded shadow">
+  <article class="service-card" data-aos="fade-up" data-aos-delay="300">
+    <img src="img/silo_13.JPG" alt="Silo Km 13" />
+    <div class="service-content">
+      <h3><i class="bi bi-box-seam"></i>Silos: Silo Km 13</h3>
+      <p>Capacidad estática de 29.000 tn, con pre-limpieza y secaderos, para soja, trigo y maíz.</p>
     </div>
-    <div class="col-md-8">
-      <h4>Silo Km 13</h4>
-      <p>
-        Ubicado sobre la Ruta Py-06, Km 76. Cuenta con una capacidad estática total de 29.000 tn, con 3 pre-limpieza y 2 secaderos. Se recepcionan: Soja, Trigo y Maíz.
-      </p>
+  </article>
+
+  <article class="service-card" data-aos="fade-up" data-aos-delay="400">
+    <img src="img/asistencia_tecnica.jpg" alt="Asistencia Técnica" />
+    <div class="service-content">
+      <h3><i class="bi bi-tools"></i>Asistencia Técnica</h3>
+      <p>Apoyo integral a productores desde siembra a cosecha, con capacitaciones y actividades.</p>
+      <ul>
+        <li>Charlas, días de campo y giras educativas</li>
+        <li>Parcelas experimentales y competencia de productividad</li>
+        <li>Servicios de corrección de suelo y fertilización</li>
+      </ul>
     </div>
-  </div>
-</section>
+  </article>
 
-
-<section>
-  <h2>Asistencia Técnica</h2>
-  <div class="d-flex flex-wrap gap-3 justify-content-center">
-    <img src="img/asistencia_tecnica.jpg" alt="Asistencia Técnica" class="img-fluid rounded shadow" style="max-width:300px;">
-    <img src="img/servicio_cal.jpg" alt="Corrección de suelo" class="img-fluid rounded shadow" style="max-width:300px;">
-    <img src="img/cosecha_dron.jpg" alt="Cosecha con dron" class="img-fluid rounded shadow" style="max-width:300px;">
-  </div>
-  <p class="mt-3">
-    El sector de Asistencia Técnica fue creado en el año 2008, con el objetivo de brindar asesoramiento y apoyo a los socios en la producción agrícola. Los equipos técnicos capacitados acompañan a los socios productores desde la época de siembra hasta su cosecha.<br><br>
-    También realizan múltiples actividades como:
-    <ul>
-      <li>Charlas de interés para los socios</li>
-      <li>Días de Campo</li>
-      <li>Parcelas Experimentales</li>
-      <li>Giras educativas</li>
-      <li>Competencia de alta productividad de soja</li>
-    </ul>
-    Servicios:
-    <ul>
-      <li>Corrección de suelo</li>
-      <li>Aplicación de Boro, Potasio</li>
-      <li>Medición de la curva de nivel</li>
-    </ul>
-  </p>
-</section>
-
-<section>
-  <h2>Insumos Agrícolas</h2>
-
-    <div class="row mb-4 align-items-center">
-    <div class="col-md-4">
-      <img src="img/fertilizantes.jpeg" style="width: 300px;" class="img-fluid rounded shadow">
+  <article class="service-card" data-aos="fade-up" data-aos-delay="500">
+    <img src="img/insumos.JPG" alt="Insumos Agrícolas" />
+    <div class="service-content">
+      <h3><i class="bi bi-basket"></i>Insumos Agrícolas</h3>
+      <p>Proveemos insecticidas, fertilizantes y semillas con depósitos amplios para un suministro fluido.</p>
     </div>
-    <div class="col-md-8">
-      <p class="mt-3">
-    Fue inaugurada la nueva oficina el 01 de diciembre del 2020.<br>
-    Este departamento, en conjunto con profesionales de asistencia técnica y semillería ofrecen asesoramiento a los socios productores.<br><br>
-    Se encargan en proveer insecticidas, fungicidas, adherentes, herbicidas, fertilizantes y semillas.<br>
-    Cuenta con depósitos amplios, organizado con rack y pallet, para poder suministrar de manera fluida los insumos a los productores socios.
-  </p>
-   <div class="d-flex flex-wrap gap-3 justify-content-center">
-    <img src="img/insumos.JPG" alt="Insumos" class="img-fluid rounded shadow" style="max-width:200px;">
-    <img src="img/abono.jpeg" alt="Abono" class="img-fluid rounded shadow" style="max-width:200px;">
+  </article>
 
-  </div>
+  <article class="service-card" data-aos="fade-up" data-aos-delay="600">
+    <img src="img/semillas.jpg" alt="Semillería" />
+    <div class="service-content">
+      <h3><i class="bi bi-seedling"></i>Semillería</h3>
+      <p>Distribución de semillas certificadas con condiciones óptimas de almacenamiento que garantizan calidad.</p>
     </div>
-  </div>
-</section>
+  </article>
 
-<section>
-    <div class="row mb-4 align-items-center">
-    <div class="col-md-4">
-      <img src="img/semillas.jpg" style="width: 400px;" class="img-fluid rounded shadow">
+  <article class="service-card" data-aos="fade-up" data-aos-delay="700">
+    <img src="img/surtidor.jpg" alt="Estación de Servicio" />
+    <div class="service-content">
+      <h3><i class="bi bi-fuel-pump"></i>Estación de Servicio</h3>
+      <p>Venta de combustibles y lubricantes con servicio de cambio de aceite gratuito en ubicación centro y Km 13.</p>
     </div>
-    <div class="col-md-8">
-      <h2>Semillería</h2>
-      <p>
-        Inspirados en la sustentabilidad y con un gran enfoque en la productividad distribuye, variedades de semillas certificadas de soja, maíz, trigo, sorgo y otros cultivos que cumplen con los estándares legales de producción.<br><br>
-        Cuenta con depósitos aptos para la preservación de las condiciones originales de las semillas, además de cámaras frías para el almacenamiento de aquellas que requieran condiciones ambientales controladas, garantizando así la conservación de la calidad genética, física y fitosanitaria de las mismas.
-      </p>
+  </article>
+
+  <article class="service-card" data-aos="fade-up" data-aos-delay="800">
+    <img src="img/superoriental.jpeg" alt="Supermercado" />
+    <div class="service-content">
+      <h3><i class="bi bi-shop"></i>Supermercado</h3>
+      <p>Amplia variedad de productos frescos y de calidad; productos orientales, ropería, verdulería, carnicería y más.</p>
     </div>
-  </div>
-</section>
+  </article>
 
-
-
-
-<section>
-  <h2>Estación de Servicio</h2>
-
-    <div class="row mb-4 align-items-center">
-    <div class="col-md-4">
-      <img src="img/surtidor.jpg" style="width: 300px;" class="img-fluid rounded shadow">
+  <article class="service-card" data-aos="fade-up" data-aos-delay="900">
+    <img src="img/ferr.jpeg" alt="Ferretería" />
+    <div class="service-content">
+      <h3><i class="bi bi-tools"></i>Ferretería</h3>
+      <p>Venta de artículos para construcción, repuestos agrícolas, equipos y más con control de stock profesional.</p>
     </div>
-    <div class="col-md-8">
-      <p class="mt-3">
-    <strong>Estación de Servicio Centro:</strong> dispone a la venta combustibles, lubricantes variados, gas GLP y todo tipo de productos necesario en automotriz. También realiza servicio de cambio de aceite con mano de obra gratuita.<br><br>
-    <strong>Estación de servicio Km 13:</strong> siendo una sucursal, se limita al suministro de combustibles, lubricantes, gas GLP y algunos productos necesarios en automotriz.
-  </p>
-   <div class="d-flex flex-wrap gap-3 justify-content-center">
-    <img src="img/sisterna.jpg" alt="Insumos" class="img-fluid rounded shadow" style="max-width:200px;">
-    <img src="img/aceites.jpg" alt="Abono" class="img-fluid rounded shadow" style="max-width:200px;">
+  </article>
 
-  </div>
+  <article class="service-card" data-aos="fade-up" data-aos-delay="1000">
+    <img src="img/materiales.jpg" alt="Materiales de Construcción" />
+    <div class="service-content">
+      <h3><i class="bi bi-building"></i>Materiales de Construcción</h3>
+      <p>Surtimos neumáticos, pinturas, cemento y más para obras con garantía de calidad y mejores precios.</p>
     </div>
-  </div>
-</section>
+  </article>
 
-
-
-<section>
-  <h2>Supermercado</h2>
-
-  <div class="row mb-4 align-items-center">
-    <div class="col-md-4">
-      <img src="img/superoriental.jpeg" alt="Productos orientales" class="img-fluid rounded shadow">
-    </div>
-    <div class="col-md-8">
-      <h4>Productos orientales</h4>
-      <p>Aderezos, condimentos, lamen, sake, snacks, soju y muchos más.</p>
-    </div>
-  </div>
-
-  <div class="row mb-4 align-items-center">
-    <div class="col-md-4">
-      <img src="img/superroperia.jpeg" alt="Ropería y Zapatería" class="img-fluid rounded shadow">
-    </div>
-    <div class="col-md-8">
-      <h4>Ropería y Zapatería</h4>
-      <p>Prendas y calzados con varias marcas reconocidas para damas, caballeros y niños/as.</p>
-    </div>
-  </div>
-
-  <div class="row mb-4 align-items-center">
-    <div class="col-md-4">
-      <img src="img/verduleria.jpeg" alt="Verdulería" class="img-fluid rounded shadow">
-    </div>
-    <div class="col-md-8">
-      <h4>Verdulería</h4>
-      <p>Verduras frescas, el 40% de sus productos son proveídos por productores locales.</p>
-    </div>
-  </div>
-
-  <div class="row mb-4 align-items-center">
-    <div class="col-md-4">
-      <img src="img/carniceria.jpg" alt="Carnicería" class="img-fluid rounded shadow">
-    </div>
-    <div class="col-md-8">
-      <h4>Carnicería</h4>
-      <p>Carnes de excelente calidad con controles higiénicos, en alianza con productores locales.</p>
-    </div>
-  </div>
-
-  <div class="row mb-4 align-items-center">
-    <div class="col-md-4">
-      <img src="img/deposito.jpeg" alt="Depósito al por mayor" class="img-fluid rounded shadow">
-    </div>
-    <div class="col-md-8">
-      <h4>Depósito al por mayor</h4>
-      <p>Para los socios y clientes que realizan sus compras en volumen mayor.</p>
-    </div>
-  </div>
-
-  <p class="mt-4">
-    En julio de 2005, se habilitó el supermercado más grande y completo del Distrito. Los clientes podrán encontrar diferentes productos desde canastas básicas, carnicerías, panificados, artículos orientales, roperías y mucho más al mejor precio de la zona.
-  </p>
-</section>
-
-
-<section>
-  <h2>Ferretería</h2>
-  <div class="d-flex flex-wrap gap-3 justify-content-center">
-    <img src="img/ferr.jpeg" alt="Ferretería" class="img-fluid rounded shadow" style="max-width:300px;">
-    <img src="img/ferr1.jpeg" alt="Ferretería" class="img-fluid rounded shadow" style="max-width:300px;">
-  </div>
-  <p class="mt-3">
-    En edificio compartido con el Supermercado, en el 2005, se reinauguró la ferretería más grande y completa del Distrito, con un moderno salón de ventas y con los mejores controles de stock a través de códigos de barras.<br><br>
-    Ofrece artículos de:
-    <ul>
-      <li>Ferretería en general</li>
-      <li>Repuestos para maquinarias agrícolas</li>
-      <li>Equipos de compresores</li>
-      <li>Soldaduras</li>
-      <li>Motosierras</li>
-      <li>Prensado de mangueras hidráulicas, etc.</li>
-    </ul>
-  </p>
-</section>
-
-<section>
-  <h2>Materiales de Construcción</h2>
-  <div class="d-flex flex-wrap gap-3 justify-content-center">
-    <img src="img/materiales.jpg" alt="Materiales" class="img-fluid rounded shadow" style="max-width:300px;">
-    <img src="img/mat3.jpeg" alt="Materiales" class="img-fluid rounded shadow" style="max-width:300px;">
-  </div>
-  <p class="mt-3">
-    Habilitado en junio de 2015, con el objetivo de suministrar a los socios y público en general los materiales de construcciones con una buena relación de calidad y precio.<br>
-    Provee productos de las marcas más solicitadas del mercado, atendiendo a las necesidades de cada comprador. Ofreciendo a los suyos, la mejor atención posible.<br><br>
-    <strong>Productos en venta:</strong>
-    <ul>
-      <li>Neumáticos</li>
-      <li>Hierros</li>
-      <li>Pinturas</li>
-      <li>Caños</li>
-      <li>Cementos</li>
-    </ul>
-    <div>
-    <img src="img/mat2.jpeg" alt="Materiales" class="img-fluid rounded shadow" style="max-width:300px;">
-    <img src="img/mat1.jpeg" alt="Materiales" class="img-fluid rounded shadow" style="max-width:300px;">
-    </div>
-  </p>
-</section>
+</main>
 
 <footer>
-  © 2025 Cooperativa Pirapó Agrícola Ltda.
+  <p>© 2025 Cooperativa Pirapó Agrícola Ltda.</p>
+  <nav class="social-icons" aria-label="Redes sociales">
+    <a href="#" aria-label="Facebook"><i class="bi bi-facebook"></i></a>
+    <a href="#" aria-label="Instagram"><i class="bi bi-instagram"></i></a>
+    <a href="#" aria-label="WhatsApp"><i class="bi bi-whatsapp"></i></a>
+  </nav>
 </footer>
+
+<!-- Scripts -->
+<script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js"></script>
+<script src="https://cdn.jsdelivr.net/npm/aos@2.3.4/dist/aos.js"></script>
+<script>
+  AOS.init({ once: true });
+</script>
 
 </body>
 </html>
