@@ -66,7 +66,7 @@
     header.page-header {
       padding: 4rem 2rem 2rem;
       text-align: center;
-      max-width: 900px;
+      max-width: 1000px;
       margin: 0 auto 3rem;
     }
 
@@ -99,11 +99,22 @@
       padding: 1.5rem;
     }
 
+    
     footer {
       background-color: #2b6777;
       color: #fff;
       text-align: center;
       padding: 30px 15px;
+    }
+
+    .social-icons a {
+      color: #ffffff;
+      transition: color 0.3s, transform 0.3s;
+    }
+
+    .social-icons a:hover {
+      color: #ffe53b;
+      transform: scale(1.2);
     }
 
   </style>
@@ -220,9 +231,8 @@
 <footer>
   <p>© 2025 Cooperativa Pirapó Agrícola Ltda.</p>
   <nav class="social-icons" aria-label="Redes sociales">
-    <a href="#"><i class="bi bi-facebook"></i></a>
-    <a href="#"><i class="bi bi-instagram"></i></a>
-    <a href="https://wa.me/595984905269"><i class="bi bi-whatsapp"></i></a>
+ <a href="https://www.facebook.com/profile.php?id=100083546711527" class="text-white"><i class="bi bi-facebook fs-4"></i></a>
+    <a href="https://wa.me/595984905269" class="text-white"><i class="bi bi-whatsapp fs-4"></i></a>
   </nav>
 </footer>
 
