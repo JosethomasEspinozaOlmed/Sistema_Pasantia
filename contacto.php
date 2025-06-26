@@ -99,24 +99,6 @@
       padding: 1.5rem;
     }
 
-    
-    footer {
-      background-color: #2b6777;
-      color: #fff;
-      text-align: center;
-      padding: 30px 15px;
-    }
-
-    .social-icons a {
-      color: #ffffff;
-      transition: color 0.3s, transform 0.3s;
-    }
-
-    .social-icons a:hover {
-      color: #ffe53b;
-      transform: scale(1.2);
-    }
-
   </style>
 </head>
 <body>
@@ -173,68 +155,43 @@
 
 <section class="mt-5 mb-5">
   <div class="container">
-    <div class="row">
-      <div class="col-lg-6" data-aos="fade-right">
-        <h2>Enviar un mensaje</h2>
-        <form action="enviar.php" method="post" class="bg-white p-4 rounded shadow">
-          <div class="mb-3">
-            <label class="form-label">Nombre:</label>
-            <input type="text" name="nombre" class="form-control" required>
-          </div>
-          <div class="mb-3">
-            <label class="form-label">Correo electrónico:</label>
-            <input type="email" name="correo" class="form-control" required>
-          </div>
-          <div class="mb-3">
-            <label class="form-label">Mensaje:</label>
-            <textarea name="mensaje" class="form-control" rows="4" required></textarea>
-          </div>
-          <button type="submit" class="btn btn-primary">Enviar</button>
-        </form>
-        <div id="mensaje-exito" class="alert alert-success mt-3" style="display:none;">
-         Tu mensaje ha sido enviado correctamente.
-</div>
-      </div>
-
-      <div class="col-lg-6 mt-5 mt-lg-0" data-aos="fade-left">
-        <h2>Agendar turno para créditos</h2>
-        <form action="agendar.php" method="post" class="bg-white p-4 rounded shadow">
-          <div class="mb-3">
-            <label class="form-label">Nombre:</label>
-            <input type="text" name="nombre" class="form-control" required>
-          </div>
-          <div class="mb-3">
-            <label class="form-label">Número de socio:</label>
-            <input type="text" name="socio" class="form-control" required>
-          </div>
-          <div class="mb-3">
-            <label class="form-label">Fecha deseada:</label>
-            <input type="date" name="fecha" class="form-control" required>
-          </div>
-          <div class="mb-3">
-            <label class="form-label">Hora:</label>
-            <input type="time" name="hora" class="form-control" required>
-          </div>
-          <div class="mb-3">
-            <label class="form-label">Comentario (opcional):</label>
-            <textarea name="comentario" class="form-control" rows="3"></textarea>
-          </div>
-          <button type="submit" class="btn btn-success">Agendar Turno</button>
-          <div id="turno-exito" class="alert alert-success mt-3" style="display:none;"></div>
-
-        </form>
+    <div class="row justify-content-center">
+      <div class="col-lg-8 col-xl-6" data-aos="fade-right">
+        <div class="bg-white p-5 rounded-4 shadow-lg border border-primary-subtle">
+          <h2 class="text-center text-primary mb-4">
+            <i class="bi bi-envelope-paper-heart-fill me-2"></i>Enviar un mensaje
+          </h2>
+          <p class="text-center text-muted mb-4">Escribinos tu consulta, sugerencia o comentario. Estamos para ayudarte.</p>
+          <form action="enviar.php" method="post">
+            <div class="mb-3">
+              <label class="form-label fw-semibold text-primary">Nombre completo</label>
+              <input type="text" name="nombre" class="form-control form-control-lg" placeholder="Ej. María González" required>
+            </div>
+            <div class="mb-3">
+              <label class="form-label fw-semibold text-primary">Correo electrónico</label>
+              <input type="email" name="correo" class="form-control form-control-lg" placeholder="Ej. maria@example.com" required>
+            </div>
+            <div class="mb-3">
+              <label class="form-label fw-semibold text-primary">Mensaje</label>
+              <textarea name="mensaje" class="form-control" rows="4" placeholder="Escribe tu mensaje aquí..." required></textarea>
+            </div>
+            <div class="d-grid">
+              <button type="submit" class="btn btn-primary btn-lg">
+                <i class="bi bi-send-fill me-2"></i>Enviar mensaje
+              </button>
+            </div>
+            <div id="mensaje-exito" class="alert alert-success mt-3 text-center fw-semibold" style="display:none;">
+              <i class="bi bi-check-circle-fill me-2"></i>Tu mensaje ha sido enviado correctamente.
+            </div>
+          </form>
+        </div>
       </div>
     </div>
   </div>
 </section>
 
-<footer>
-  <p>© 2025 Cooperativa Pirapó Agrícola Ltda.</p>
-  <nav class="social-icons" aria-label="Redes sociales">
- <a href="https://www.facebook.com/profile.php?id=100083546711527" class="text-white"><i class="bi bi-facebook fs-4"></i></a>
-    <a href="https://wa.me/595984905269" class="text-white"><i class="bi bi-whatsapp fs-4"></i></a>
-  </nav>
-</footer>
+
+
 
 <!-- Scripts -->
 <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js"></script>

@@ -103,6 +103,7 @@
       text-align: center;
       padding: 30px 15px;
     }
+    
   </style>
 </head>
 <body>
@@ -119,10 +120,17 @@
   </div>
 </nav>
 
-<header class="page-header" data-aos="fade-down" data-aos-duration="900">
-  <h1>Servicios Profesionales</h1>
-  <p>Comprometidos con la excelencia, ofrecemos una amplia gama de servicios para nuestros socios y comunidad.</p>
+<header class="page-header text-center py-5 px-3" data-aos="fade-down" data-aos-duration="900">
+  <div class="container">
+    <h1 class="display-4 fw-bold text-gradient mb-3">
+      <i class="bi bi-stars me-2"></i>Servicios Profesionales
+    </h1>
+    <p class="lead text-secondary">
+      Comprometidos con la excelencia, ofrecemos una amplia gama de servicios para nuestros socios y la comunidad, con innovación y calidad.
+    </p>
+  </div>
 </header>
+
 
 <main class="cards-container">
     <article class="service-card" data-aos="fade-up" data-aos-delay="100">
@@ -178,7 +186,7 @@
   <article class="service-card" data-aos="fade-up" data-aos-delay="600">
     <img src="img/semillas.jpg" alt="Semillería" />
     <div class="service-content">
-      <h3><i class="bi bi-seedling"></i>Semillería</h3>
+      <h3><i class="bi bi-flower3"></i>Semillería</h3>
       <p>Distribución de semillas certificadas con condiciones óptimas de almacenamiento que garantizan calidad.</p>
     </div>
   </article>
@@ -215,38 +223,49 @@
     </div>
   </article>
 </main>
-
-<section class="container mb-5">
-  <div class="row">
-    <div class="col-lg-8 offset-lg-2" data-aos="fade-up">
-      <h2 class="text-center mb-4">Agendar turno para créditos</h2>
-      <form action="agendar.php" method="post" class="bg-white p-4 rounded shadow">
-        <div class="mb-3">
-          <label class="form-label">Nombre:</label>
-          <input type="text" name="nombre" class="form-control" required>
-        </div>
-        <div class="mb-3">
-          <label class="form-label">Número de socio:</label>
-          <input type="text" name="socio" class="form-control" required>
-        </div>
-        <div class="mb-3">
-          <label class="form-label">Fecha deseada:</label>
-          <input type="date" name="fecha" class="form-control" required>
-        </div>
-        <div class="mb-3">
-          <label class="form-label">Hora:</label>
-          <input type="time" name="hora" class="form-control" required>
-        </div>
-        <div class="mb-3">
-          <label class="form-label">Comentario (opcional):</label>
-          <textarea name="comentario" class="form-control" rows="3"></textarea>
-        </div>
-        <button type="submit" class="btn btn-success">Agendar Turno</button>
-        <div id="turno-exito" class="alert alert-success mt-3" style="display:none;"></div>
-      </form>
+<section class="container py-5">
+  <div class="row justify-content-center">
+    <div class="col-lg-8" data-aos="fade-up">
+      <div class="bg-white p-5 rounded-4 shadow-lg border border-success-subtle">
+        <h2 class="text-center mb-4 text-success">
+          <i class="bi bi-calendar2-check-fill me-2"></i>Agendar Turno para Créditos
+        </h2>
+        <p class="text-center text-muted mb-4">Complete los datos para solicitar su turno con atención personalizada.</p>
+        <form action="agendar.php" method="post">
+          <div class="mb-3">
+            <label class="form-label fw-semibold text-success">Nombre completo</label>
+            <input type="text" name="nombre" class="form-control form-control-lg" placeholder="Ej. Juan Pérez" required>
+          </div>
+          <div class="mb-3">
+            <label class="form-label fw-semibold text-success">Número de socio</label>
+            <input type="text" name="socio" class="form-control form-control-lg" placeholder="Ej. 12345" required>
+          </div>
+          <div class="row">
+            <div class="col-md-6 mb-3">
+              <label class="form-label fw-semibold text-success">Fecha deseada</label>
+              <input type="date" name="fecha" class="form-control form-control-lg" required>
+            </div>
+            <div class="col-md-6 mb-3">
+              <label class="form-label fw-semibold text-success">Hora</label>
+              <input type="time" name="hora" class="form-control form-control-lg" required>
+            </div>
+          </div>
+          <div class="mb-3">
+            <label class="form-label fw-semibold text-success">Comentario (opcional)</label>
+            <textarea name="comentario" class="form-control" rows="3" placeholder="¿Desea indicar algo adicional?"></textarea>
+          </div>
+          <div class="d-grid">
+            <button type="submit" class="btn btn-success btn-lg">
+              <i class="bi bi-send-check me-2"></i> Agendar Turno
+            </button>
+          </div>
+          <div id="turno-exito" class="alert alert-success mt-3 text-center fw-semibold" style="display:none;"></div>
+        </form>
+      </div>
     </div>
   </div>
 </section>
+
 
 <footer>
   <p>© 2025 Cooperativa Pirapó Agrícola Ltda.</p>
