@@ -1,0 +1,23 @@
+-- Crear la base de datos si no existe
+CREATE DATABASE IF NOT EXISTS cooperativa_pirapo;
+USE cooperativa_pirapo;
+
+-- Tabla para agendar turnos crediticios
+CREATE TABLE IF NOT EXISTS turnos (
+  id INT AUTO_INCREMENT PRIMARY KEY,
+  nombre VARCHAR(100) NOT NULL,
+  socio VARCHAR(50) NOT NULL,
+  fecha DATE NOT NULL,
+  hora TIME NOT NULL,
+  comentario TEXT,
+  fecha_registro TIMESTAMP DEFAULT CURRENT_TIMESTAMP
+);
+
+-- Tabla para mensajes de contacto
+CREATE TABLE IF NOT EXISTS mensajes (
+  id INT AUTO_INCREMENT PRIMARY KEY,
+  nombre VARCHAR(100) NOT NULL,
+  correo VARCHAR(150) NOT NULL,
+  mensaje TEXT NOT NULL,
+  fecha_envio TIMESTAMP DEFAULT CURRENT_TIMESTAMP
+);
